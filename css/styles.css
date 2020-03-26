@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #131419;
+}
+
+.form {
+  position: relative;
+  width: 350px;
+  padding: 40px 40px 60px;
+  background: #131419;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: inset -5px -5px 10px rgba(255, 255, 255, 0.05),
+               inset 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.signup-form {
+  margin: 100px 0px;
+}
+
+.form h2 {
+  color: #c7c7c7;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.form .input {
+  text-align: left;
+  margin-top: 40px;
+}
+
+.form .input .inputBox {
+  margin-top: 20px;
+}
+
+.form .input .inputBox label {
+  display: block;
+  color: #868686;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.form .input .inputBox input, .username-display {
+  width: 100%;
+  height: 50px;
+  background: #131419;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  padding: 5px 15px;
+  color: #ffffff;
+  font-size: 18px;
+  color: #03a9f4;
+  box-shadow: 0px 0px 0px 1px #ffffff1a;
+}
+
+.form .input .inputBox input[type="submit"] {
+  color: #006c9c;
+  margin-top: 20px;
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+              inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.form .input .inputBox input[type="submit"]:active {
+  margin-top: 20px;
+  box-shadow: 0px 0px 0px 1px #ffffff1a;
+}
+
+.form .input .inputBox input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+.form .input .inputBox input::placeholder, .username-display > div {
+  color: #555;
+  font-size: 18px;
+}
+
+.username-display {
+  display: flex;
+  align-items: center;
+}
+
+.form .input .inputBox select, select option {
+  width: 100%;
+  height: 50px;
+  background: #131419;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  padding: 5px 15px;
+  color: #ffffff;
+  font-size: 18px;
+  color: #03a9f4;
+  box-shadow: 0px 0px 0px 1px #ffffff1a;
+}
+
+.instead {
+  margin-top: 30px;
+  color: #868686;
+}
+
+.instead a {
+  color: #FF0047;
+  text-decoration: none;
+}
+
+.instead a:hover {
+  text-decoration: underline;
+}
