@@ -35,8 +35,10 @@ body {
   margin: 20px;
 }
 
-.logo-image image {
-
+.logo-image img {
+  height: 200px;
+  border-radius: 100%;
+  box-shadow: 0px 0px 54px 10px #000;
 }
 
 .logo-name {

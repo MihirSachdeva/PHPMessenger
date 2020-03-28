@@ -1,3 +1,13 @@
+<?php
+  session_start();
+  if(isset($_SESSION['userId'])) {
+    header("Location: ./mainapp.php");
+    exit();
+  }
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -10,7 +20,7 @@
     <div class="main">
       <div class="logo">
         <div class="logo-image">
-          <img src="" alt="">
+          <img class="navContactImage" src="./photos/logo.png" alt="PHPMessenger Logo">
         </div>
         <div class="logo-name">
           PHPMessenger
@@ -21,7 +31,7 @@
 
       </div>
       <div class="action">
-        <a class="sign-link" href="./signup.html">
+        <a class="sign-link" href="./signup.php">
           <div class="sign">
             Sign Up
           </div>
@@ -37,7 +47,7 @@
 
           </div>
         </div>
-        <a class="sign-link" href="./signin.html">
+        <a class="sign-link" href="./signin.php">
           <div class="sign">
             Sign In
           </div>

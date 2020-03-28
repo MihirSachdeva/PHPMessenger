@@ -23,11 +23,11 @@ a {
   box-shadow: 0px 0px 0px 1px #ffffff1a;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .logo {
-  width: 325px;
-  box-shadow: 0px 0px 0px 1px #ffffff1a;
+  width: 305px;
   display: flex;
 }
 
@@ -47,33 +47,96 @@ a {
 }
 
 .logo-name {
-  font-size: 28px;
+  font-size: 25px;
   margin: 0 20px;
+}
+
+.selectedContact {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.navContactImage {
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+}
+
+.user-icon {
+  height: 60px;
+  width: 60px;
+  background-color: #555;
+  align-self: center;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+.user-icon:hover {
+  cursor: pointer;
+}
+
+.user-dropdown {
+  font-size: 25px;
+  position: absolute;
+  right: 10px;
+  top: 85px;
+  background-color: #131419;
+  box-shadow: 0px 0px 0px 1px #ffffff5c;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-button {
+  padding: 10px;
+  border-radius: 50px;
+  margin: 5px;
+  background-color: #1e1f29;
+  text-align: center;
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1), inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.dropdown-button p {
+  padding: 8px 27px;
 }
 
 .main {
   display: flex;
   flex-direction: row;
   box-shadow: 0px 0px 0px 1px #ffffff1a;
+  max-height: 86vh;
 }
 
 .contacts {
   display: flex;
   flex-direction: column;
   box-shadow: 0px 0px 0px 1px #ffffff1a;
+  overflow: scroll;
+  overflow-x: hidden;
+  width: 450px;
 }
 
 .contact {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 10px 20px;;
+  border: none;
+  outline: none;
+  margin: 10px 20px;
   background-color: #131419;
   border-radius: 60px;
   cursor: pointer;
   transition: 0.25s;
-  box-shadow: inset -5px -5px 10px rgba(255, 255, 255, 0.05),
-               inset 5px 5px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1), inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.contact:active {
+  border: none;
+  box-shadow: 0px 0px 0px 1px #ffffff1a;
 }
 
 .contact:hover {
@@ -81,8 +144,8 @@ a {
 }
 
 .contact-image {
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   background-color: #555;
   border-radius: 100%;
   margin: 20px;
@@ -188,7 +251,7 @@ a {
   box-shadow: 0px  0px 0px 1px #ffffff1a;
 }
 
-.send-message {
+.send-button {
   width: 115px;
   height: 75px;
   background: #131419;
@@ -203,10 +266,14 @@ a {
               inset 2px 2px 6px rgba(0, 0, 0, 0.8);
 }
 
-.send-message:hover {
+.send-button:hover {
   cursor: pointer;
 }
 
-.send-message:active {
+.send-button:active {
   box-shadow: 0px  0px 0px 1px #ffffff1a  ;
+}
+
+.hidden {
+  display: none;
 }

@@ -36,6 +36,15 @@ body {
   letter-spacing: 4px;
 }
 
+.form .error-message {
+  color: #FF0047;
+}
+
+.form .success-message {
+  color: #00ef4e;
+}
+
+
 .form .input {
   text-align: left;
   margin-top: 40px;
@@ -119,3 +128,29 @@ body {
 .instead a:hover {
   text-decoration: underline;
 }
+
+#usernameCheck {
+  font-size: 15px;
+  margin-bottom: 11px;
+}
+
+.remember-box {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.remember-checkbox {
+  box-shadow: none !important;
+  height: 20px !important;
+  width: 20px !important;
+  margin: 10px !important;
+  }
+
+.remember-label {
+  font-size: 17px !important;
+  margin-bottom: 0 !important;
+}
+
+  .
