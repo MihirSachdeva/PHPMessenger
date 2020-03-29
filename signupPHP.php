@@ -1,9 +1,9 @@
 <?php
   if(isset($_POST['signup-submit'])) {
     $host = "localhost";
-    $user = "Mihir";
-    $database = "phptest";
-    $passwd = "Mihir123@";
+    $user = "first_year";
+    $database = "first_year";
+    $passwd = "first_year";
 
     $con =  mysqli_connect($host, $user, $passwd, $database);
     if(!$con) {

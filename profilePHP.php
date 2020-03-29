@@ -7,9 +7,9 @@
   $username = $_SESSION['username'];
   if(isset($_POST['profile-submit'])) {
     $host = "localhost";
-    $user = "Mihir";
-    $database = "phptest";
-    $passwd = "Mihir123@";
+    $user = "first_year";
+    $database = "first_year";
+    $passwd = "first_year";
 
       $con =  new mysqli($host, $user, $passwd, $database);
 

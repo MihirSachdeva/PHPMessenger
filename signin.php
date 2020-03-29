@@ -6,9 +6,9 @@
   }
   if(isset($_COOKIE['PHPMessengerSelector'])) {
     $host = "localhost";
-    $user = "Mihir";
-    $database = "phptest";
-    $passwd = "Mihir123@";
+    $user = "first_year";
+    $database = "first_year";
+    $passwd = "first_year";
     $con =  new mysqli($host, $user, $passwd, $database);
     if($con->connect_errno) {
       die("Can not connect: ".$con->connect_error);
