@@ -41,6 +41,36 @@
             $_SESSION['userId'] = $row['id'];
             $_SESSION['username'] = $row['username'];
 
+            $usrId = $_SESSION['userId'];
+            $usrName = $_SESSION['username'];
+
+            if(isset($_POST['rememberMe'])) {
+              $selectorName = "PHPMessengerSelector";
+              $validatorName = "PHPMessengerValidator";
+
+              $randomSelector = bin2hex(random_bytes(6));
+              $randomValidator = bin2hex(random_bytes(20));
+              $hashedValidator = password_hash($randomValidator, PASSWORD_DEFAULT);
+
+              setcookie($selectorName, $randomSelector, time() + 86400*15, "/");
+              setcookie($validatorName, $randomValidator, time() + 86400*15, "/");
+
+              $sql = "INSERT INTO mihir_auth (user_id, user_name, selector, hashedValidator) VALUES (
+                '$usrId',
+                '$usrName',
+                '$randomSelector',
+                '$hashedValidator'
+              )";
+
+              if($con->query($sql)) {
+                header("Location: ./mainapp.php?login=success");
+                exit();
+              }
+              else {
+                header("Location: ./mainapp.php?error=sqlerror");
+                exit();
+              }
+            }
             header("Location: ./signin.php?login=success");
             exit();
           }

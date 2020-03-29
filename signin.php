@@ -4,6 +4,35 @@
     header("Location: ./mainapp.php");
     exit();
   }
+  if(isset($_COOKIE['PHPMessengerSelector'])) {
+    $host = "localhost";
+    $user = "Mihir";
+    $database = "phptest";
+    $passwd = "Mihir123@";
+    $con =  new mysqli($host, $user, $passwd, $database);
+    if($con->connect_errno) {
+      die("Can not connect: ".$con->connect_error);
+    }
+
+    $user_table = "mihir_users";
+    $message_table = "mihir_messages";
+    $auth_table = "mihir_auth";
+
+    $PHPMessengerSelector = $_COOKIE['PHPMessengerSelector'];
+    $PHPMessengerValidator = $_COOKIE['PHPMessengerValidator'];
+
+    $sql = "SELECT * FROM $auth_table WHERE selector = '$PHPMessengerSelector' ORDER BY made_when DESC LIMIT 1";
+    $query = mysqli_query($con, $sql);
+    $result = mysqli_fetch_array($query);
+    if(password_verify($PHPMessengerValidator, $result['hashedValidator'])) {
+      session_start();
+      $_SESSION['userId'] = $result['user_id'];
+      $_SESSION['username'] = $result['user_name'];
+
+      header("Location: ./mainapp.php");
+      exit();
+    }
+  }
 ?>
 
 <!DOCTYPE html>

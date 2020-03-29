@@ -19,7 +19,6 @@
   }
   $user_table = "mihir_users";
   $message_table = "mihir_messages";
-  $current_userid = 1;
 
   $sql = "SELECT * FROM $user_table WHERE username = '$currentUserName'";
   $query = mysqli_query($con, $sql);
