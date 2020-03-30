@@ -71,6 +71,31 @@
           }
         });
 
+        $(window).keydown(function(event) {
+          if(event.keycode == 13) {
+            var typed_message = $('#type-message').val();
+            if(typed_message == "") {
+              alert("Empty message.");
+            }
+            else {
+              $('#type-message').val("");
+              if(currentDisplayingContactId == "") {
+                alert("No contact selected.");
+              }
+              else {
+                $.ajax({
+                  url: "sendMessage.php",
+                  type: "POST",
+                  data: {sent_by: <?php echo $currentUserId; ?>, sent_to: currentDisplayingContactId, message: typed_message}, //sent_by should be the user id and sent_to should be the contact id
+                  success: function(data) {
+                    $('.just-for-alert').html(data);
+                  }
+                });
+              }
+            }
+          }
+        });
+
         $('.contact').click(function() {
           var contactid = $(this).val();
           currentDisplayingContactId = contactid;
@@ -228,10 +253,9 @@
 
         <div class="message-type-send">
 
-          <form class="send-form" action="" method="post">
 
-            <input class="type-message" id="type-message" type="text" name="message" placeholder="Type a message" autocomplete="off">
-            <button class="send-button" type="button" name="send-message-button">Send</button>
+          <input class="type-message" id="type-message" type="text" name="message" placeholder="Type a message" autocomplete="off">
+          <button class="send-button" type="button" name="send-message-button">Send</button>
 
           </form>
 
