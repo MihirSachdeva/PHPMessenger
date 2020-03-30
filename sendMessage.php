@@ -16,8 +16,6 @@
   $sent_to = $_POST['sent_to'];
   $message = $_POST['message'];
 
-  $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
-
   if(empty($message)) {
     echo "<script>alert('Empty message.');</script>";
   }

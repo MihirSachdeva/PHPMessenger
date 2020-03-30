@@ -28,12 +28,14 @@
 
     while ($row = $result->fetch_assoc()) {
 
+      $safeMessage = htmlspecialchars($row['message'], ENT_QUOTES, 'UTF-8');
+
       echo(
         "<div class=".($row['sent_by'] == $userId ?"'sent-message'>":"'recieved-message'>").
 
           "<div class='message-box'>".
 
-            $row['message'].
+          $safeMessage.
 
           "</div>".
 
