@@ -71,8 +71,8 @@
           }
         });
 
-        $(window).keydown(function(event) {
-          if(event.keycode == 13) {
+        $(window).on('keypress', function(event) {
+          if(event.which == 13) {
             var typed_message = $('#type-message').val();
             if(typed_message == "") {
               alert("Empty message.");
@@ -253,9 +253,10 @@
 
         <div class="message-type-send">
 
-
+        <div class="send-form">
           <input class="type-message" id="type-message" type="text" name="message" placeholder="Type a message" autocomplete="off">
           <button class="send-button" type="button" name="send-message-button">Send</button>
+        </div>
 
           </form>
 
